@@ -1,0 +1,245 @@
+body{ padding:0; margin:0;}
+ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,p { padding:0; margin:0;}
+ul,li{list-style:none;}
+img{border:0;}
+img{ vertical-align:top;}/*解决img底部多出3PX bug*/
+img[src=""],img:not([src]){opacity:0;}/*当图片路径为空时隐藏*/
+.clearfloat{clear:both; height: 0; font-size:1px; line-height:0;}
+a{ text-decoration:none;}
+/*[type=radio]{ display: none;}*/
+input[type="button"], input[type="submit"], input[type="reset"], textarea,input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input[type="number"]{  -moz-appearance: textfield; }/*去除input默认样式*/
+.img_box img{width: 100%;}
+.img_box2 img{height: 100%;}
+div{
+    font-family: "Microsoft YaHei UI";
+    -moz-user-select:none;/*火狐*/
+    -webkit-user-select:none;/*webkit浏览器*/
+    -ms-user-select:none;/*IE10*/
+    -khtml-user-select:none;/*早期浏览器*/
+    user-select:none;
+}
+
+.float_left{
+    float: left;
+}
+.float_right{
+    float: right;
+}
+.margin_left_none{
+    margin-left: 0 !important;
+}
+.margin_right_none{
+    margin-right: 0 !important;
+}
+/*Vue未渲染时隐藏*/
+[v-cloak] {
+    display: none;
+}
+/*菜单*/
+#menu{
+    height: 100%;
+    }
+#menuContainer{
+    height: 100%;
+    width: 15%;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.menuOneContent{
+    position: fixed;
+    /*color: #8a6e49;*/
+    color: white;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s ;
+    -ms-transition: left 0.3s ;
+    -o-transition: left 0.3s ;
+    transition: left 0.3s ;
+    z-index: 10;
+    top: 0;
+    left:-15%;
+    width: 15%;
+    height: 100%;
+    font-size: 20px;
+    background-image: -moz-linear-gradient( 90deg, rgb(68,68,68) 0%, rgb(34,34,34) 26%, rgb(0,0,0) 85%);
+    background-image: -webkit-linear-gradient( 90deg, rgb(68,68,68) 0%, rgb(34,34,34) 26%, rgb(0,0,0) 85%);
+    background-image: -ms-linear-gradient( 90deg, rgb(68,68,68) 0%, rgb(34,34,34) 26%, rgb(0,0,0) 85%);
+}
+.menuOneContent.active{
+    left:0;
+}
+#menu .logo{
+    height: 9%;
+}
+.menuOne ul{
+    padding-bottom: 20px;
+}
+.menuOne ul li{
+    width: 80%;
+    height: 80px;
+    line-height: 80px;
+}
+.menuOne ul li.active{
+    background-image: -moz-linear-gradient( 180deg, rgb(60,60,60) 0%, rgb(15,15,15) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(60,60,60) 0%, rgb(15,15,15) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(60,60,60) 0%, rgb(15,15,15) 100%);
+}
+.menuListContent{
+    width: 100%;
+    overflow: hidden;
+    height: 91%;
+}
+.menuListContent .scrollContent{
+
+}
+.scrollContent{
+    width: 125%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+}
+.menuSwitch{
+    width: 2%;
+    position: fixed;
+    z-index: 8;
+    top: 0;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s ;
+    -ms-transition: left 0.3s ;
+    -o-transition: left 0.3s ;
+    transition: left 0.3s ;
+    opacity: 0.8;
+    height: 100%;
+    background-image: -moz-linear-gradient( 180deg, rgb(138,110,73) 0%, rgb(203,174,135) 48%, rgb(138,110,73) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(138,110,73) 0%, rgb(203,174,135) 48%, rgb(138,110,73) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(138,110,73) 0%, rgb(203,174,135) 48%, rgb(138,110,73) 100%);
+}
+.menuSwitch.active1{
+    left:0;
+}
+.menuSwitch.active2{
+    left:15%;
+}
+.menuSwitch.active3{
+    Left:28%
+}
+.menuSwitch.active4{
+    Left:41%
+}
+.menuSwitch .arrows{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.menuSwitch .arrows .img_box {
+    position: absolute;
+    top: 49%;
+}
+.menuSwitch .arrows .img_box img{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    -webkit-transition: All 0.3s;
+    -moz-transition: All 0.3s ;
+    -ms-transition: All 0.3s ;
+    -o-transition: All 0.3s ;
+    transition: All 0.3s ;
+}
+.menuSwitch .arrows .img_box img.active{
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+/*二级菜单*/
+.menuTwoContent{
+    position: fixed;
+    z-index: 7;
+    padding-top: 20px;
+    width: 13%;
+    height: 100%;
+    overflow: hidden;
+    color: #1a1106;
+    left: -13%;
+    top: 0;
+    font-size: 19px;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s ;
+    -ms-transition: left 0.3s ;
+    -o-transition: left 0.3s ;
+    transition: left 0.3s ;
+    background-image: -moz-linear-gradient( 180deg, rgb(244,192,123) 0%, rgba(207,166,112,0.97) 86%, rgba(205,165,111,0.96) 91%, rgba(166,137,98,0.94118) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(244,192,123) 0%, rgba(207,166,112,0.97) 86%, rgba(205,165,111,0.96) 91%, rgba(166,137,98,0.94118) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(244,192,123) 0%, rgba(207,166,112,0.97) 86%, rgba(205,165,111,0.96) 91%, rgba(166,137,98,0.94118) 100%);
+}
+.menuTwoContent.active1{
+    left:2%;
+}
+.menuTwoContent.active2{
+    left:15%;
+}
+.menuTwo ul li{
+    height: 70px;
+    width: 80%;
+    line-height: 70px;
+}
+.menuTwo ul li.active{
+    background-image: -moz-linear-gradient( 180deg, rgb(246,220,185) 1%, rgb(206,178,140) 91%, rgb(166,136,95) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(246,220,185) 1%, rgb(206,178,140) 91%, rgb(166,136,95) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(246,220,185) 1%, rgb(206,178,140) 91%, rgb(166,136,95) 100%);
+}
+.menuTwo ul{
+    padding-bottom: 40px;
+}
+/*三级菜单*/
+.menuThreeContent{
+    position: fixed;
+    padding-top: 20px;
+    width: 13%;
+    height: 100%;
+    overflow: hidden;
+    color: #36312b;
+    left: -13%;
+    top: 0;
+    font-size: 19px;
+    -webkit-transition: left 0.3s;
+    -moz-transition: left 0.3s ;
+    -ms-transition: left 0.3s ;
+    -o-transition: left 0.3s ;
+    transition: left 0.3s ;
+    background-image: -moz-linear-gradient( 180deg, rgb(248,212,165) 0%, rgba(231,197,152,0.97) 86%, rgba(230,196,151,0.96) 91%, rgba(211,179,137,0.94118) 100%);
+    background-image: -webkit-linear-gradient( 180deg, rgb(248,212,165) 0%, rgba(231,197,152,0.97) 86%, rgba(230,196,151,0.96) 91%, rgba(211,179,137,0.94118) 100%);
+    background-image: -ms-linear-gradient( 180deg, rgb(248,212,165) 0%, rgba(231,197,152,0.97) 86%, rgba(230,196,151,0.96) 91%, rgba(211,179,137,0.94118) 100%);
+}
+.menuThreeContent.active1{
+    left:15%
+}
+.menuThreeContent.active2{
+    left:28%;
+}
+.menuThree ul li{
+    height: 70px;
+    width: 80%;
+    line-height: 70px;
+}
+.menuThree ul{
+    padding-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

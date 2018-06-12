@@ -1,0 +1,274 @@
+[
+  {
+      "name": "发送验证码",
+      "function": "user/send",
+      "data": {
+          "tel(电话)":"",
+          "time":""
+      }
+  },
+  {
+    "name": "注册/忘记密码",
+    "function": "user/register",
+    "data": {
+      "tel(电话)":"",
+      "vcode(验证码)":"",
+      "no(加密验证码)":"",
+      "time(过期时间)":"",
+      "password(密码)":""
+    }
+  },{
+    "name": "修改密码",
+    "function": "user/register",
+    "data": {
+      "user_id(用户id)":"",
+      "old_pw(旧密码)":"",
+      "token(加密)":"",
+      "password(密码)":""
+    }
+  },
+  {
+    "name": "登录",
+    "function": "user/user_login",
+    "data": {
+      "tel(电话)":"",
+      "password(密码)":""
+    }
+  },
+  {
+    "name": "微信支付",
+    "function": "pay/wxPay",
+    "data": {
+      "order_name(订单名称)":"",
+      "user_id(用户id)":"",
+      "token":"",
+      "cash_card(是否组合支付0、1)":"",
+      "order_id(订单id)":"",
+      "amount(价格)":""
+    }
+  },
+  {
+    "name": "支付宝支付",
+    "type": "get",
+    "url":"http://59.110.215.209/tp3/index.php/home/pay/aliPay",
+    "data": {
+      "order_name(订单名称)":"",
+      "user_id(用户id)":"",
+      "token":"",
+      "cash_card(是否组合支付0、1)":"",
+      "order_id(订单id)":"",
+      "amount(价格)":""
+    }
+  },
+  {
+    "name": "手机分类",
+    "url":"mobilegoods/goodscategory",
+    "data": {
+      "user_id(用户id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "收货地址展示",
+    "url":"user/cust_address_list",
+    "data": {
+      "cust_id(用户id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name":"删除收货地址",
+    "url":"user/delete_cust_address",
+    "data":{
+      "id":"",//地址ID
+      "cust_id":"",//用户id
+      "token":""
+    }
+  },
+  {
+    "name": "手机商品筛选",
+    "url":"MobileGoods/goodsselect",
+    "data": {
+      "user_id(用户id)":"",
+      "condition(选择条件id,格式和goods_id一样)":"",
+      "goods_id(商品id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "个人资料",
+    "url":"UserInfo/userinfo",
+    "data": {
+      "user_id(用户id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "修改个人资料",
+    "url":"UserInfo/edituser",
+    "data": {
+      "user_id(用户id)":"",
+      "sex(性别)":"",
+      "birthday(生日)":"",
+      "cust_name(昵称)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "订单列表",
+    "url":"Order/orderlist",
+    "data": {
+      "user_id(用户id)":"",
+      "status(状态  -1 => '订单取消',0 => '未付款', 10 => '待发货',20 => '已发货',40 => '已签收',)":"",
+      "page(页面，从0开始)":"",
+      "rows(一页个数)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "订单删除",
+    "url":"Order/orderdelete",
+    "data": {
+      "user_id(用户id)":"",
+      "order_id(订单id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "订单取消",
+    "url":"Order/ordercancel",
+    "data": {
+      "user_id(用户id)":"",
+      "order_id(订单id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "确认收货",
+    "url":"Order/orderover",
+    "data": {
+      "user_id(用户id)":"",
+      "order_id(订单id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "查询是否支付",
+    "url":"Order/ispay",
+    "data": {
+      "user_id(用户id)":"",
+      "order_id(订单id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "用户支付密码",
+    "url":"user/edit_pay_pw",
+    "data": {
+      "user_id(用户id)":"",
+      "pay_pw(支付密码)":"",
+      "old_pay_pw(旧支付密码)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "卡支付",
+    "url":"pay/CardPay",
+    "data": {
+      "user_id(用户id)":"",
+      "pay_pw(支付密码)":"",
+      "order_id(订单id)":"",
+      "token(加密)":""
+    }
+  },
+  {
+    "name": "微信手机绑定",
+    "url":"user/bundling_phone",
+    "data": {
+      "open_id":"",
+      "tel(电话)":"",
+      "vcode(验证码)":"",
+      "no(加密验证码)":""
+    }
+  },
+  {
+    "name": "微信jssdk pay",
+    "url":"pay/WxJsPay",
+    "data": {
+      "order_name(订单名称)":"",
+      "openid":"",
+      "user_id(用户id)":"",
+      "token":"",
+      "cash_card(是否组合支付0、1)":"",
+      "order_id(订单id)":"",
+      "amount(价格)":""
+    }
+  },
+  {
+    "name": "充值",
+    "url":"pay/Recharge",
+    "data": {
+      "user_id(用户id)":"",
+      "token":"",
+//      "card_pw(卡密)":"",
+      "card_id(卡号)":""
+    }
+  },
+  {
+    "name": "帐号余额变动",
+    "url":"user/pay_list",
+    "data": {
+      "user_id(用户id)":"",
+      "token":"",
+      "status":"",
+      "time":"",
+      "page":"",
+      "rows":""
+    }
+  },
+  {
+    "name": "微信注册查询",
+    "url":"user/wx_user",
+    "data": {
+      "open_id":""
+    }
+  },
+  {
+    "name": "充值选项",
+    "url":"pay/recharge_choose",
+    "data": {
+
+    }
+  },
+  {
+    "name": "会员卡激活",
+    "url":"user/vipcard",
+    "data": {
+      "user_id(用户id)":"",
+      "token":"",
+      "card_pw(卡密)":"",
+      "card_id(卡号)":"",
+      "no(验证码)":"",
+      "time(时间)":""
+    }
+  },
+  {
+    "name": "充值余额微信",
+    "url":"pay/wx_recharge",
+    "data": {
+      "order_name(订单名称)":"",
+      "user_id(用户id)":"",
+      "money(价格)":""
+    }
+  },
+  {
+    "name": "充值余额支付宝",
+    "type": "get",
+    "url":"http://59.110.215.209/tp3/index.php/Home/Notify/ali_recharge_notify",
+    "data": {
+      "order_name(订单名称)":"",
+      "user_id(用户id)":"",
+      "money(价格)":""
+    }
+  }
+]

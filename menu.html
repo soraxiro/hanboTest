@@ -1,0 +1,61 @@
+
+<script src="./js/menu.js"></script>
+
+<div id="menuContainer" v-cloak>
+    <!--一级菜单-->
+    <div class="menuOneContent" :class="[menuShow?'active':'']">
+        <!--logo-->
+        <div class="logo img_box2">
+            <img src="./images/logo.png" alt="">
+        </div>
+        <!--一级菜单-->
+        <div class="menuListContent">
+            <div class="scrollContent">
+                <div class="menuOne">
+                    <ul>
+                        <li v-for="(item,index) in OneList" :class="[index===menuOne?'active':'']" @click="menuOneClick(item,index)">{{item.name}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--二级菜单-->
+    <div class="menuTwoContent" :class="['active'+menuTwoPath]">
+        <div class="scrollContent">
+            <div class="menuTwo" v-if="menuOne!==''">
+                <ul>
+                    <li v-for="(item,index) in OneList[menuOne].TwoList"  :class="[index===menuTwo?'active':'']" @click="menuTwoClick(item,index)">{{item.name}}</li>
+                </ul>
+            </div>
+            <div class="menuTwo" v-else>
+                <ul>
+                    <li v-for="(item,index) in OneList[0].TwoList"  :class="[index===menuTwo?'active':'']">{{item.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--三级菜单-->
+    <div class="menuThreeContent" :class="['active'+menuThreePath]">
+        <div class="scrollContent">
+            <div class="menuThree" v-if="menuTwo!==''">
+                <ul>
+                    <li v-for="(item,index) in OneList[menuOne].TwoList[menuTwo].threeList">{{item.name}}</li>
+                </ul>
+            </div>
+            <div class="menuThree" v-else>
+                <ul>
+                    <li v-for="(item,index) in OneList[0].TwoList[0].threeList">{{item.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--菜单隐藏显示-->
+    <div class="menuSwitch" :class="['active'+arrowsPath]" @click="switchMenu">
+        <div class="arrows">
+            <div class="img_box">
+                <img :class="[arrowsPath!=1?'active':'']" src="./images/arrows_01.png" alt="">
+            </div>
+        </div>
+    </div>
+    <!--二级菜单-->
+</div>
